@@ -16,29 +16,53 @@
 </nav>
 
 <div class="con"><div id="sideBar">
-<ul>
-    <li>
-        <a href="#Education" class="janr">Education</a>
+
+<div class="confDelete">
+    <h2>Are you surre you want to delete this field?</h2>
+    <div class="yesNoDelete">
+        <button class="yes">Yes</button>
+        <button class="no">No</button>
+    </div>
+</div>
+
+<ul class="fields">
+    <li class="newGroup">
+        <button class="newG" onclick="addField()">Add New Field</button>
+    </li>
+    <li class="newGroup input">
+        <input class="nameGroup" type="text" placeholder="nameGroup">
+        <input class="submitGroup" type="submit">
+    </li>
+    <li class="ss">
+        <a href="#Education" class="janr" id="Education1">Education</a>
+        <a class="delete Education">Delete</a>
+
     </li>
     <li>
-        <a href="#InterestingScience" class="janr">Interesting Science</a>
+        <a href="#InterestingScience" class="janr" id="InterestingScience1" >Interesting Science</a>
+        <a class="delete">Delete</a>
     </li><li>
-        <a href="#History" class="janr">History</a>
+        <a href="#History" class="janr" id="History1">History</a>
+        <a class="delete">Delete</a>
     </li>
+
+     <li>
+        <a href="#Mindfulness" class="janr" id="Mindfulness1">Mindfulness</a>
+        <a class="delete">Delete</a>
+    </li>
+
     <li>
-        <a href="#Movies" class="janr">Movies</a>
+        <a href="#Movies" class="janr" id="Movies1">Movies</a>
+        <a class="delete">Delete</a>
     </li>
-    <li>
-        <a href="#Music" class="janr">Music</a>
-    </li>
-    <li>
-        <a href="#Mindfulness" class="janr">Mindfulness</a>
-    </li>
+   
+
+   
     
 
 </ul>
 </div>
-<iframe class="mainVideo" width="1000" height="600" src="https://www.youtube.com/embed/09qU8g3yfBs?start=10" title="YouTube video player"
+<iframe class="mainVideo" width="1000" height="600" src="https://www.youtube.com/embed/ISdBAf-ysI0" title="YouTube video player"
  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </div>
@@ -48,26 +72,37 @@
 
 
 <section id="Education">
-<h2>Education</h2>
+<div class="secHead">
+    <h2>Education</h2>
+    <button class="addNewVideo">Add New Video</button>
+    <div class="submitVideoLabel">
+        <label for="newLink">Add youtube url:</label>
+        <input type="url" id="newLink">
+        <label for="newName">Name this video:</label>
+        <input type="url" id="newName">
+        <input class="submitVideo" type="submit">
+    </div>
+</div>
+
 <div class="list">
-<button id="listVideo" class="listVideo0">
-<img id="imageVideo" class="imageVideo0" src="https://i.ytimg.com/vi/hu-q2zYwEYs/maxresdefault.jpg" name="https://www.youtube.com/embed/hu-q2zYwEYs?list=PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G">
+<button class="listVideo" name="https://www.youtube.com/embed/hu-q2zYwEYs?list=PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G">
+<img class="imageVideo" src="https://i.ytimg.com/vi/hu-q2zYwEYs/maxresdefault.jpg" >
 </button>
 
-<button id="listVideo" class="listVideo1">
-<img id="imageVideo" class="imageVideo1" src="https://i.ytimg.com/vi/6RhOzQciVwI/maxresdefault.jpg" name="https://www.youtube.com/embed/6RhOzQciVwI?list=PL4cUxeGkcC9hNokByJilPg5g9m2APUePI">
+<button class="listVideo" name="https://www.youtube.com/embed/6RhOzQciVwI?list=PL4cUxeGkcC9hNokByJilPg5g9m2APUePI">
+<img class="imageVideo" src="https://i.ytimg.com/vi/6RhOzQciVwI/maxresdefault.jpg" >
 </button>
 
-<button id="listVideo" class="listVideo2">
-<img id="imageVideo" class="imageVideo2" src="https://i.ytimg.com/vi/3RjQznt-8kE/maxresdefault.jpg" name="https://www.youtube.com/embed/3RjQznt-8kE?list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR">
+<button class="listVideo" name="https://www.youtube.com/embed/3RjQznt-8kE?list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR">
+<img class="imageVideo" src="https://i.ytimg.com/vi/3RjQznt-8kE/maxresdefault.jpg" >
 </button>
 
-<button id="listVideo" class="listVideo3">
-<img id="imageVideo" class="imageVideo3" src="https://i.ytimg.com/vi/w-7RQ46RgxU/maxresdefault.jpg" name="https://www.youtube.com/embed/w-7RQ46RgxU?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp">
+<button iclass="listVideo" name="https://www.youtube.com/embed/w-7RQ46RgxU?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp">
+<img class="imageVideo" src="https://i.ytimg.com/vi/w-7RQ46RgxU/maxresdefault.jpg" >
 </button>
 
-<button id="listVideo" class="listVideo4">
-<img id="imageVideo" class="imageVideo4" src="https://i.ytimg.com/vi/0Mp2kwE8xY0/maxresdefault.jpg" name="https://www.youtube.com/embed/0Mp2kwE8xY0?list=PL4cUxeGkcC9gKfw25slm4CUDUcM_sXdml">
+<button class="listVideo" name="https://www.youtube.com/embed/0Mp2kwE8xY0?list=PL4cUxeGkcC9gKfw25slm4CUDUcM_sXdml">
+<img class="imageVideo" src="https://i.ytimg.com/vi/0Mp2kwE8xY0/maxresdefault.jpg" >
 </button>
 
 </div>
@@ -79,67 +114,172 @@
 
 
 <section id="InterestingScience">
-<h2>Interesting Science</h2>
+<div class="secHead">
+    <h2>Interesting Science</h2>
+    <button class="addNewVideo">Add New Video</button>
+    <div class="submitVideoLabel">
+        <label for="newLink">Add youtube url:</label>
+        <input type="url" id="newLink"><br><br>
+        <label for="newName">Name this video:</label>
+        <input type="url" id="newName"><br><br>
+        <input class="submitVideo" type="submit">
+    </div>
+</div>
+
 <div class="list">
-<button id="listVideo" class="listVideo5">
-<img id="imageVideo" class="imageVideo5" src="https://i.ytimg.com/vi/CBrsWPCp_rs/maxresdefault.jpg" name="https://www.youtube.com/embed/CBrsWPCp_rs">
+<button class="listVideo" name="https://www.youtube.com/embed/CBrsWPCp_rs">
+<img class="imageVideo" src="https://i.ytimg.com/vi/CBrsWPCp_rs/maxresdefault.jpg">
 </button>
 
-<button id="listVideo" class="listVideo6">
-<img id="imageVideo" class="imageVideo6" src="https://i.ytimg.com/vi/GOJFznzSZhM/maxresdefault.jpg" name="https://www.youtube.com/embed/GOJFznzSZhM">
+<button class="listVideo" name="https://www.youtube.com/embed/GOJFznzSZhM">
+<img class="imageVideo" src="https://i.ytimg.com/vi/GOJFznzSZhM/maxresdefault.jpg">
 </button>
 
-<button id="listVideo" class="listVideo7">
-<img id="imageVideo" class="imageVideo7" src="https://m.media-amazon.com/images/M/MV5BNmNjZTk5MDktODgyMy00M2NkLTlmMWQtNzE4OGZmYWUyNTAzXkEyXkFqcGdeQXVyMTAxMjM3NDQ@._V1_.jpg" name="https://www.youtube.com/embed/dROkWymbkdo">
+<button class="listVideo" name="https://www.youtube.com/embed/dROkWymbkdo">
+<img class="imageVideo" src="https://m.media-amazon.com/images/M/MV5BNmNjZTk5MDktODgyMy00M2NkLTlmMWQtNzE4OGZmYWUyNTAzXkEyXkFqcGdeQXVyMTAxMjM3NDQ@._V1_.jpg">
 </button>
 
-<button id="listVideo" class="listVideo8">
-<img id="imageVideo" class="imageVideo8" src="https://i.ytimg.com/vi/A4aFjhgoYrc/maxresdefault.jpg" name="https://www.youtube.com/embed/A4aFjhgoYrc">
+<button class="listVideo" name="https://www.youtube.com/embed/A4aFjhgoYrc">
+<img class="imageVideo" src="https://i.ytimg.com/vi/A4aFjhgoYrc/maxresdefault.jpg">
 </button>
 
-<button id="listVideo" class="listVideo9">
-<img id="imageVideo" class="imageVideo9" src="https://i.ytimg.com/vi/xZwzqmRJB4I/maxresdefault.jpg" name="https://www.youtube.com/embed/xZwzqmRJB4I">
+<button class="listVideo" name="https://www.youtube.com/embed/xZwzqmRJB4I">
+<img class="imageVideo" src="https://i.ytimg.com/vi/xZwzqmRJB4I/maxresdefault.jpg">
 </button>
 
 </div>
 </section >
+
 <section id="History">
-<h2>History</h2>
+<div class="secHead">
+    <h2>History</h2>
+    <button class="addNewVideo">Add New Video</button>
+    <div class="submitVideoLabel">
+        <label for="newLink">Add youtube url:</label>
+        <input type="url" id="newLink"><br><br>
+        <label for="newName">Name this video:</label>
+        <input type="url" id="newName"><br><br>
+        <input class="submitVideo" type="submit">
+    </div>
+</div>
+
+
 
 <div class="list">
-<button id="listVideo" class="listVideo10">
-<img id="imageVideo" class="imageVideo10" src="https://i.ytimg.com/vi/N0aI6QWV97s/maxresdefault.jpg" name="https://www.youtube.com/embed/N0aI6QWV97s">
+<button class="listVideo" name="https://www.youtube.com/embed/N0aI6QWV97s">
+<img class="imageVideo" src="https://i.ytimg.com/vi/N0aI6QWV97s/maxresdefault.jpg">
 </button>
 
-<button id="listVideo" class="listVideo11">
-<img id="imageVideo" class="imageVideo11" src="https://m.media-amazon.com/images/M/MV5BMTUwMzY4MTM4N15BMl5BanBnXkFtZTgwODA4NjAxMzE@._V1_FMjpg_UX1000_.jpg" name="https://www.youtube.com/embed/2fS9ixfQ_no">
+<button class="listVideo" name="https://www.youtube.com/embed/2fS9ixfQ_no">
+<img class="imageVideo"  src="https://m.media-amazon.com/images/M/MV5BMTUwMzY4MTM4N15BMl5BanBnXkFtZTgwODA4NjAxMzE@._V1_FMjpg_UX1000_.jpg">
 </button>
 
-<button id="listVideo" class="listVideo12">
-<img id="imageVideo" class="imageVideo12" src="https://i.ytimg.com/vi/E3aNbNxKS6s/maxresdefault.jpg" name="https://www.youtube.com/embed/E3aNbNxKS6s">
+<button class="listVideo" name="https://www.youtube.com/embed/E3aNbNxKS6s">
+<img class="imageVideo" src="https://i.ytimg.com/vi/E3aNbNxKS6s/maxresdefault.jpg">
 </button>
 
-<button id="listVideo" class="listVideo13">
-<img id="imageVideo" class="imageVideo13" src="https://i.ytimg.com/vi/NEHYUOUGgyc/maxresdefault.jpg" name="https://www.youtube.com/embed/NEHYUOUGgyc">
+<button class="listVideo" name="https://www.youtube.com/embed/NEHYUOUGgyc">
+<img class="imageVideo" src="https://i.ytimg.com/vi/NEHYUOUGgyc/maxresdefault.jpg">
 </button>
 
-<button id="listVideo" class="listVideo14">
-<img id="imageVideo" class="imageVideo14" src="https://i.ytimg.com/vi/yeLQVare-3k/maxresdefault.jpg" name="https://www.youtube.com/embed/yeLQVare-3k">
+<button class="listVideo" name="https://www.youtube.com/embed/yeLQVare-3k">
+<img class="imageVideo" src="https://i.ytimg.com/vi/yeLQVare-3k/maxresdefault.jpg">
 </button>
 
 </div>
 </section >
-<section id="Movies">
-<h2>Movies</h2>
-</section >
-<section id="Music">
-<h2>Music</h2>
-</section >
+
 <section id="Mindfulness">
-<h2>Mindfulness</h2>
+<div class="secHead">
+    <h2>Mindfulness</h2>
+    <button class="addNewVideo">Add New Video</button>
+    <div class="submitVideoLabel">
+        <label for="newLink">Add youtube url:</label>
+        <input type="url" id="newLink"><br><br>
+        <label for="newName">Name this video:</label>
+        <input type="url" id="newName"><br><br>
+        <input class="submitVideo" type="submit">
+    </div>
+    
+</div>
+
+<div class="list">
+<button class="listVideo" name="https://www.youtube.com/embed/sSP_SCabO0Y">
+<img class="imageVideo" src="https://i.ytimg.com/vi/sSP_SCabO0Y/maxresdefault.jpg">
+</button>
+
+<button class="listVideo" name="https://www.youtube.com/embed/mioR_WrkRaU">
+<img class="imageVideo" src="https://i.ytimg.com/vi/mioR_WrkRaU/hqdefault.jpg">
+</button>
+
+<button class="listVideo" name="https://www.youtube.com/embed/TVgQ_tgWMyU">
+<img class="imageVideo" src="https://miro.medium.com/max/1400/1*JRCwTcHQCHYiEjZoLHNPDw.png">
+</button>
+
+<button class="listVideo" name="https://www.youtube.com/embed/jbdB2ss1YLs">
+<img class="imageVideo" src="https://i.ytimg.com/vi/jbdB2ss1YLs/maxresdefault.jpg">
+</button>
+
+<button class="listVideo" name="https://www.youtube.com/embed/La9oLLoI5Rc">
+<img class="imageVideo" src="https://i.ytimg.com/vi/La9oLLoI5Rc/maxresdefault.jpg">
+</button>
+</div>
 </section >
+
+<section id="Movies">
+<div class="secHead">
+    <h2>Movies</h2>
+    <button class="addNewVideo">Add New Video</button>
+    
+    <div class="submitVideoLabel">
+        <label for="newLink">Add youtube url:</label>
+        <input type="url" id="newLink"><br><br>
+        <label for="newName">Name this video:</label>
+        <input type="url" id="newName"><br><br>
+        <input class="submitVideo" type="submit">
+    </div>
+    
+</div>
+
+<div class="list">
+<button class="listVideo" name="https://www.youtube.com/embed/D0kiS4ROWkQ">
+<img class="imageVideo" src="https://i.ytimg.com/vi/D0kiS4ROWkQ/maxresdefault.jpg">
+</button>
+
+<button class="listVideo" name="https://www.youtube.com/embed/BAh9m2bkgww">
+<img class="imageVideo" src="https://www.slashfilm.com/img/gallery/tangerines-trailer-oscar-nominated-drama-promotes-peace-in-a-time-of-war/intro-import.jpg">
+</button>
+
+<button class="listVideo" name="https://www.youtube.com/embed/PH6-jtiIvRE">
+<img class="imageVideo" src="https://i.ytimg.com/vi/PH6-jtiIvRE/maxresdefault.jpg">
+</button>
+
+<button class="listVideo" name="https://www.youtube.com/embed/Wux34Duw8rc">
+<img class="imageVideo" src="https://i.ytimg.com/vi/fy1ij9ZGU6Y/maxresdefault.jpg">
+</button>
+
+<button class="listVideo" name="https://www.youtube.com/embed/WmKkp_ynnIc">
+<img class="imageVideo" src="https://i.ytimg.com/vi/WmKkp_ynnIc/sddefault.jpg">
+</button>
+</div>
+
+</section >
+
+
+
+
 
 
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+<!-- https://www.youtube.com/watch?v=BFrBr8oUVXU
+
+https://www.youtube.com/embed/BFrBr8oUVXU"  -->
+
+<!-- https://www.youtube.com/watch?v=hu-q2zYwEYs&list=PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G
+
+https://www.youtube.com/embed/hu-q2zYwEYs?list=PL4cUxeGkcC9ivBf_eKCPIAYXWzLlPAm6G" -->

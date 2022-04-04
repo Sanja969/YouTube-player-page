@@ -1,5 +1,13 @@
+*{
+    /* text-align:center; */
+    /* color:rgb(243, 245, 241); */
+    font-family: 'Mochiy Pop P One', sans-serif;
+
+}
+
+
 body{
-    background-image: url("https://cdn.pixabay.com/photo/2016/01/14/06/09/woman-1139397_960_720.jpg");
+    background-image: url("https://cdn.pixabay.com/photo/2022/03/18/19/09/blue-throat-7077261_960_720.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -27,10 +35,9 @@ nav{
    transition:0.5s;
 }
 #headTitle:hover{
-   text-shadow: 1px -1px 0 #ccc, 2px -2px 0 #ccc,
-                     3px -3px 0 #ccc, 4px -4px 0 #ccc,
-                     5px -5px 0 #ccc, 6px -6px 0 #ccc,
-                   
+   text-shadow: 1px -1px 0 rgb(52, 177, 156), 2px -2px 0 rgb(52, 177, 156),
+                     3px -3px 0 rgb(52, 177, 156), 4px -4px 0 rgb(52, 177, 156),
+                     5px -5px 0 rgb(52, 177, 156), 6px -6px 0 rgb(52, 177, 156),
                      20px -20px 30px rgba(0, 0, 0, 0.5); 
  
    
@@ -61,7 +68,7 @@ height:600px;
      overflow-y: scroll;
   overflow-x: hidden;
 }
-.janr{
+.janr, .newG{
 color: white;
 font-size: 20px;
  text-decoration: none;
@@ -112,16 +119,134 @@ justify-content:space-around;
 }
 section{
     background-color: rgba(87, 174, 209, 0.2);
-    height: 200px;
+    min-height: 200px;
+    border: 1px solid rgb(55, 207, 174);
+    margin: 10px;
 }
 .list{
-    display: flex;
+    display: table;
     margin:5px;
 }
-#imageVideo{
+.imageVideo{
     width: 150px;
     height: 120px;
 }
-#listVideo{
+.listVideo{
     margin:5px;
+}
+.newGroup{
+    background-color: rgb(47, 179, 135);
+    height: 50px;
+    box-shadow: 0 0 10px 10px rgb(12, 56, 49,0.5);
+}
+.newGroup:hover{
+    background-color:rgb(100, 240, 95);
+
+}
+.newG{
+    background-color: inherit;
+    border:none;
+}
+.input{
+    display: none;
+}
+.nameGroup{
+
+}
+.delete{
+    position: absolute;
+    bottom: 0;
+    right: 1px;
+    color:rgb(212, 113, 146,0.5);
+    cursor:pointer;
+
+}
+.delete:hover{
+    color:rgb(190, 87, 121);
+    font-size: 20px;
+}
+.confDelete{
+    width:200px;
+  height:100px;
+  position: absolute;
+  z-index:2;
+  background-color: rgb(190, 87, 121);
+  font-size: 10px;
+  padding: 5px 15px;
+  color:white;
+  left:300px;
+  top:300px;
+  display:none;
+}
+.yesNoDelete{
+    display: flex;
+    align-items:center;
+    justify-content:space-around;
+   
+}
+.yes, .no{
+   
+   border:none;
+   box-shadow: 0px 0px 5px 5px rgb(49, 37, 37,0.2);
+   cursor:pointer;
+   color:white;
+   padding: 5px 0px;
+   border-radius: 5px;
+   box-sizing: border-box;
+   width:40px;
+}
+.yes{
+background-color: rgb(87, 166, 190);
+}
+.no{
+   background-color: rgb(197, 157, 27);
+ 
+}
+.yes:hover, .no:hover{
+    font-size: 17px;
+    width:50px;
+}
+.secHead{
+    display: flex;
+    align-items:center;
+    justify-content:left;
+    height:50px;
+    background-color: rgba(38, 192, 197, 0.5);
+    position: relative;
+}
+.addNewVideo{
+    height:30px;
+    margin:10px 25px;
+    padding:5px 25px;
+    font-size: 15px;
+    background-color: rgb(29, 30, 32);
+    color: white;
+    border-color: rgb(21, 22, 24);
+    cursor:pointer;
+ 
+}
+.addNewVideo:hover{
+font-size:18px;
+height:33px;
+}
+#newLink{
+    margin: 10px 10px 10px 3px;
+    width:400px;
+}
+#newName{
+    margin: 10px 10px 10px 3px;
+    width:100px;
+}
+.submitVideo{
+    background-color: rgb(16, 133, 64);
+    color: white;
+    padding: 5px 10px;
+    border-color: green;
+}
+.submitVideoLabel{
+    display: none;
+    align-items:center;
+    justify-content:left;
+    padding-left: 20px;
+  
 }
