@@ -124,8 +124,11 @@ section{
     margin: 10px;
 }
 .list{
+
     display: table;
     margin:5px;
+    padding: 5px;
+    width:100%;
 }
 .imageVideo{
     width: 150px;
@@ -152,9 +155,7 @@ section{
 .input{
     display: none;
 }
-.nameGroup{
 
-}
 .delete{
     position: absolute;
     bottom: 0;
@@ -255,7 +256,7 @@ height:33px;
 }
 #newName{
     margin: 10px 10px 10px 3px;
-    width:100px;
+    width:150px;
 }
 .submitVideo{
     background-color: rgb(16, 133, 64);
@@ -268,5 +269,33 @@ height:33px;
     align-items:center;
     justify-content:left;
     padding-left: 20px;
+  
+}
+.warning{
+    position:absolute;
+    font-size: 10px;
+    color:red;
+    bottom: -6px;
+    left:0px;
+    display:none;
+}
+
+.warning1{
+    position:absolute;
+    font-size: 10px;
+    color:red;
+    bottom: -8px;
+    left:260px;
+ 
+  
+}
+
+.warning2{
+    position:absolute;
+    font-size: 10px;
+    color:red;
+    bottom: -8px;
+    left:800px;
+
   
 }

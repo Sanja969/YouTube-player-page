@@ -1,5 +1,12 @@
 
 let listV=document.querySelectorAll(".listVideo");
+let delete1 = document.querySelectorAll(".delete1");
+let worning = document.querySelector(".warning");
+let nameOfGroup;
+let removeBtn = document.querySelectorAll(".delete");
+let addVideoButton = document.querySelectorAll(".addNewVideo");
+let submitVideo = document.querySelectorAll(".submitVideo");
+
 for(let i=0;i<listV.length;i++){
   listV[i].addEventListener("click", function () {
     document.querySelector(".mainVideo").src =
@@ -7,97 +14,105 @@ for(let i=0;i<listV.length;i++){
   });
 }
 
+for (let i = 0; i < delete1.length; i++) {
+  delete1[i].addEventListener("click", function () {
+    delete1[i].parentNode.remove();
+  });
+}
 
-
-
-let worning = document.createElement("p");
-document.querySelector(".input").appendChild(worning);
-worning.textContent = "You can't use name that you already used";
-worning.style.position = "absolute";
-worning.style.fontSize = "10px";
-worning.style.color = "red";
-worning.style.bottom = "-6px";
-worning.style.left = "0px";
-worning.style.display = "none";
-let nameOfGroup;
-
+for (var i = 0; i < removeBtn.length; i++) {
+  removeBtn[i].addEventListener("click", removeField, false);
+}
+for (let i = 0; i < submitVideo.length; i++) {
+  submitVideo[i].addEventListener("click", addVideoFcn, false);
+}
 function addField(){
     document.querySelector(".newGroup").style.display = "none";
     document.querySelector(".input").style.display="flex";
     worning.style.display = "none";
-
 }
-let removeBtn = document.querySelectorAll(".delete");
+
+for (let i = 0; i < addVideoButton.length; i++) {
+  addVideoButton[i].addEventListener("click", function () {
+    addVideoButton[i].style.display = "none";
+    addVideoButton[i].parentNode.children[2].style.display = "flex";
+    addVideoButton[i].parentNode.children[2].children[5].style.display = "none";
+    addVideoButton[i].parentNode.children[2].children[6].style.display = "none";
+  });
+}
+
 document.querySelector(".submitGroup").addEventListener("click", function () {
     
     for(i=0;i<document.querySelectorAll(".janr").length;i++){
         if(document.querySelectorAll(".janr")[i].textContent
         ==document.querySelector(".nameGroup").value){
+            worning.textContent = "You can't use name that you already used";
             worning.style.display="block";
             return;
-        }
-        
+        }   
     }
-    
-    field = document.createElement("li");
-    link = document.createElement("a");
-    deleteB=document.createElement("a");
-    field.appendChild(link);
-    field.appendChild(deleteB);
-    link.classList.add("janr");
-    link.setAttribute(
-      "id",
-      document.querySelector(".nameGroup").value.replace(/\s+/g, "")+"1"
-    );
-    deleteB.classList.add("delete");
-    document.querySelector(".fields").appendChild(field);
-    link.textContent = document.querySelector(".nameGroup").value;
-    deleteB.textContent = "Delete";
+    if(document.querySelector(".nameGroup").value==""){
+        
+        worning.textContent="You can't submit empty field";
+        worning.style.display = "block";
+        return;
+    }
+    console.log(document.querySelector(".nameGroup").value);
+    let field=document.querySelectorAll(".field")[0].cloneNode(true);
 
+     field.children[0].setAttribute(
+       "id",
+       document.querySelector(".nameGroup").value.replace(/\s+/g, "") + "1"
+     );
+
+    document.querySelector(".fields").appendChild(field);
+    field.children[0].textContent = document.querySelector(".nameGroup").value;
     document.querySelector(".input").style.display = "none";
     document.querySelector(".newGroup").style.display = "flex";
     
-    let sectionBox = document.createElement("section");
-    let secHead = document.createElement("div");
-    let titleS = document.createElement("h2");
-    let conS = document.createElement("div");
-    secHead.appendChild(titleS);
-    secHead.appendChild(document.querySelector(".addNewVideo"));
-    secHead.appendChild(document.querySelector(".submitVideoLabel"));
-    sectionBox.appendChild(secHead);
-    sectionBox.appendChild(conS);
-    conS.classList.add(".list");
-    secHead.classList.add("secHead");
-    document.querySelector("body").appendChild(sectionBox);
+    let sectionBox = document.getElementById("Education").cloneNode(true);
+
+    document.querySelector(".selections").appendChild(sectionBox);
+
     sectionBox.setAttribute("id",
       document.querySelector(".nameGroup").value.replace(/\s+/g, "")
     );
+    let titleS = sectionBox.children[0].children[0];
+    let addVideoButtonN = sectionBox.children[0].children[1];
+    let submitVideoN = sectionBox.children[0].children[2].children[4];
     titleS.textContent=document.querySelector(".nameGroup").value;
 
-    removeBtn = document.querySelectorAll(".delete");
-    for (var i = 0; i < removeBtn.length; i++) {
-      removeBtn[i].addEventListener("click", registerClickHandler, false);
-    }
+    field.children[1].addEventListener("click", removeField, false);
+
+    addVideoButtonN.addEventListener("click", function () {
+    addVideoButtonN.style.display = "none";
+    addVideoButtonN.parentNode.children[2].style.display = "flex";
+    addVideoButtonN.parentNode.children[2].children[5].style.display ="none";
+    addVideoButtonN.parentNode.children[2].children[6].style.display ="none";
+      });
+    
+    submitVideoN.addEventListener("click", addVideoFcn, false);
+    
+    
 });
 
-function registerClickHandler(e) {
+function removeField(e) {
 
     document.querySelector(".confDelete").style.display = "block";
     var target = e.target;
     document.querySelector(".yes").addEventListener("click", function () {
-        console.log(target.parentNode.children[0].id);
-        console.log(target.parentNode.children[0].id.slice(0, -1));
-        if (
-          document.getElementById(
-            target.parentNode.children[0].id.slice(0, -1)
-          ) !== null
-        ) {
-          document
-            .getElementById(target.parentNode.children[0].id.slice(0, -1))
-            .remove();
-          target.parentNode.parentNode.removeChild(target.parentNode);
-          document.querySelector(".confDelete").style.display = "none";
-        }
+
+    if (
+        document.getElementById(
+        target.parentNode.children[0].id.slice(0, -1)
+        ) !== null
+    ) {
+        document
+        .getElementById(target.parentNode.children[0].id.slice(0, -1))
+        .remove();
+        target.parentNode.parentNode.removeChild(target.parentNode);
+        document.querySelector(".confDelete").style.display = "none";
+    }
 
   });
     document.querySelector(".no").addEventListener("click", function () {
@@ -105,96 +120,67 @@ function registerClickHandler(e) {
   });
 }
 
-for (var i = 0 ; i < removeBtn.length; i++) {
-    removeBtn[i].addEventListener("click", registerClickHandler,false);
-}
+function addVideoFcn(e) {
 
-
-
-
-
-let addVideoButton = document.querySelectorAll(".addNewVideo");
-
-for(let i=0;i<addVideoButton.length;i++){
-    addVideoButton[i].addEventListener("click", function(){
+    var target=e.target;
     
-        addVideoButton[i].style.display="none";
-        addVideoButton[i].parentNode.children[2].style.display="flex";
-    })
-}
-
-let submitVideo = document.querySelectorAll(".submitVideo");
-
-for (let i = 0; i < submitVideo.length; i++) {
-  submitVideo[i].addEventListener("click", function () {
     if (
-      submitVideo[i].parentNode.children[1].value.includes(
+      target.parentNode.children[1].value.includes(
         "https://www.youtube.com"
       ) === false
     ) {
-      let worning1 = worning;
-     
-      worning1.style.display = "block";
-      worning1.style.bottom = "-10px";
-      worning1.style.left = "260px";
-      worning1.textContent = "You have to add youtube link";
-      submitVideo[i].parentNode.appendChild(worning1);
-
-      return;
+        target.parentNode.children[5].style.display =
+          "block";
+        
+        
+        return;
     }
-    else if(submitVideo[i].parentNode.children[3].value==""){
-       let worning1 = worning; 
-        worning1.style.display = "block";
-        worning1.style.bottom = "-10px";
-        worning1.style.left = "800px";
-        worning1.textContent = "Name can't be empty";
-        submitVideo[i].parentNode.appendChild(worning1);
-
+    if(target.parentNode.children[3].value==""){
+        target.parentNode.children[6].style.display =
+          "block";
         return;
     }
 
+    target.parentNode.style.display = "none";
+    target.parentNode.parentNode.children[1].style.display="block";
 
-
-
-      submitVideo[i].parentNode.style.display = "none";
-    submitVideo[i].parentNode.parentNode.children[1].style.display="block";
     let video=document.createElement("button");
     video.classList.add("listVideo");
-    submitVideo[i].parentNode.parentNode.parentNode.children[1].appendChild(video);
+    console.log(target);
+    target.parentNode.parentNode.parentNode.children[1].appendChild(video);
     let name = document.createElement("div");
-    let delete1 = document.querySelector(".delete1");
-    name.classList.add("imageVideo");
+    let delete1 = document.querySelector(".delete1").cloneNode(true);
+  
     video.appendChild(name);
     video.appendChild(delete1);
     name.style.background="black";
-    console.log(submitVideo[i].parentNode.children[3]);
-    name.textContent=submitVideo[i].parentNode.children[3].value;
+    name.textContent=target.parentNode.children[3].value;
     name.style.color="white";
-    name.style.display="flex";
-    name.style.alignItems = "center";
-    name.style.justifyContent = "center";
-
-   video.setAttribute(
-     "name",
-     submitVideo[i].parentNode.children[1].value
+    name.style.display="table";
+    name.style.paddingTop = "20%";
+    name.style.boxSizing="border-box";
+    name.style.width="150px";
+    name.style.height = "120px";
+  
+    name.style.inlineSize= "150px";
+    name.style.overflowWrap= "break-word";
+    name.style.wordBreak = "break-all";
+    video.setAttribute(
+     "name",target.parentNode.children[1].value
        .replace("watch?v=", "embed/")
        .replace("&", "?")
    );
 
-    
-      video.addEventListener("click", function () {
+    video.addEventListener("click", function () {
         document.querySelector(".mainVideo").src = video.getAttribute("name");
         console.log(video.getAttribute("name"));
-      
+    });
+    delete1.addEventListener("click", function () {
+        delete1.parentNode.remove();
       });
     
-  });
-}
+    
+  }
 
 
-let delete1= document.querySelectorAll(".delete1");
-for(let i=0;i<delete1.length;i++){
-    delete1[i].addEventListener("click", function(){
-        delete1[i].parentNode.remove();
-    })
-}
+
