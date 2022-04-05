@@ -39,7 +39,7 @@ document.querySelector(".submitGroup").addEventListener("click", function () {
         
     }
     
-      field = document.createElement("li");
+    field = document.createElement("li");
     link = document.createElement("a");
     deleteB=document.createElement("a");
     field.appendChild(link);
@@ -58,10 +58,16 @@ document.querySelector(".submitGroup").addEventListener("click", function () {
     document.querySelector(".newGroup").style.display = "flex";
     
     let sectionBox = document.createElement("section");
+    let secHead = document.createElement("div");
     let titleS = document.createElement("h2");
     let conS = document.createElement("div");
-    sectionBox.appendChild(titleS);
+    secHead.appendChild(titleS);
+    secHead.appendChild(document.querySelector(".addNewVideo"));
+    secHead.appendChild(document.querySelector(".submitVideoLabel"));
+    sectionBox.appendChild(secHead);
     sectionBox.appendChild(conS);
+    conS.classList.add(".list");
+    secHead.classList.add("secHead");
     document.querySelector("body").appendChild(sectionBox);
     sectionBox.setAttribute("id",
       document.querySelector(".nameGroup").value.replace(/\s+/g, "")
@@ -156,8 +162,10 @@ for (let i = 0; i < submitVideo.length; i++) {
     video.classList.add("listVideo");
     submitVideo[i].parentNode.parentNode.parentNode.children[1].appendChild(video);
     let name = document.createElement("div");
+    let delete1 = document.querySelector(".delete1");
     name.classList.add("imageVideo");
     video.appendChild(name);
+    video.appendChild(delete1);
     name.style.background="black";
     console.log(submitVideo[i].parentNode.children[3]);
     name.textContent=submitVideo[i].parentNode.children[3].value;
@@ -181,4 +189,12 @@ for (let i = 0; i < submitVideo.length; i++) {
       });
     
   });
+}
+
+
+let delete1= document.querySelectorAll(".delete1");
+for(let i=0;i<delete1.length;i++){
+    delete1[i].addEventListener("click", function(){
+        delete1[i].parentNode.remove();
+    })
 }

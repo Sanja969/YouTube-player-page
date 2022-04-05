@@ -132,7 +132,9 @@ section{
     height: 120px;
 }
 .listVideo{
+    position: relative;
     margin:5px;
+    cursor: pointer;
 }
 .newGroup{
     background-color: rgb(47, 179, 135);
@@ -160,6 +162,24 @@ section{
     color:rgb(212, 113, 146,0.5);
     cursor:pointer;
 
+}
+.delete1{
+    position: absolute;
+    top: 0;
+    right: 1px;
+    color:white;
+    cursor:pointer;
+    font-size: 20px;
+    font-weight: 900;
+    background-color:rgb(226, 106, 26);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px outset orange;
+    box-shadow:0 0 5px 5px rgba(71, 69, 65, 0.5);
+    z-index:5;
 }
 .delete:hover{
     color:rgb(190, 87, 121);
