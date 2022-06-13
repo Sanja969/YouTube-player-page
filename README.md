@@ -1,5 +1,7 @@
 # YouTube-player-page
 
+This is example of video player where you can organize your youtube videos in diferent sections
+
 ## Built With
 
 - Language: Javascript
